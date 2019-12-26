@@ -1,0 +1,10 @@
+> init
+<<<
++ f.txt wug.txt
+> add f.txt
+<<<
+> commit "find error"
+<<<
+> find "finderroring"
+Found no commit with that message.
+<<<

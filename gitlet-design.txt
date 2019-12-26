@@ -1,0 +1,69 @@
+Gitlet Design Document
+----------------------
+
+Classes and Data Structures
+---------------------------
+
+**** Main ****
+This class runs the main functions, including where or which commands to call based on cases.
+
+** Fields **
+1. importing Gitlet and calling from Gitlet.
+
+**** Commit ****
+This class will be dealing with all the committing process, including getting
+commit ID, message, time, and file id (file hash).
+
+** Fields **
+1. ArrayList<Commit> parents: list of parents based on its branch
+
+**** Gitlet ****
+This class basically stores all functionality of commit. T
+his is where all commands are stored at and can therefore interact.
+
+** Fields **
+1. String currentBranch: current branch name
+2. static String headPointer: name of the branch where the head pointer is point at.
+3. int commitNum: number of commits made. This is to keep track of and to use it in log function.
+4. HashMap<String, String> filesHistory: Filename as key and fileID as value.
+5. HashMap<String, String> branchHistory: branchname as key and id current branch.
+6. HashMap<String, Commit> commitHistory: commit id as key and commit as value.
+7. HashMap<String, String> stagingArea: filename as key and text (filehash) as value.
+8. HashMap<Integer, Commit> logHistory: logHistory as number of commits in key and commit in value.
+9. HashMap<String, String> stagingF: fileId as key and blobText as value.
+10.HashMap<String, String> commitIdBlob: commit id as key and filetext as value.
+11.ArrayList<String> untrackedFiles: Array of untracked files.
+12.ArrayList<String> removedFileslst: Array of removed files.
+13.HashMap<String, Commit> latestCommit: Latest commit with key and value.
+14.HashMap<String, Commit> fileIdCommit: FileID and commit to connect.
+15.HashMap<String, String> stagingCopy: Copy of staging file with text inside as value and fileID as key.
+16.HashMap<String, String> commitIDFilHash: Connector between fileID as input and commitID as value.
+
+Algorithms
+----------
+**** Main ****
+- The cases or commands were separated based using Switch Statements.
+
+**** Commit ****
+- Commit(): The basic constructor consisted of commit message, parent, time, commit id were included.
+
+**** Gitlet ****
+- init(): initialized the file using Commit with initial message as well as initial commit id were inputted.
+- add(): added based on filename by putting its file name into the hashmap. The file then was added to the staging
+         area where it is there until it is either committed or deleted.
+- commit(): commits the file based on its staging area. If there is nothing in there, then you cannot commit.
+            By keeping track of file ID as well as those file's commit id along with its parent using arrays.
+- log(): This basically prints out all the commit history. The difference between log and global
+         log is that log would be printing out merge histories as well as commits based on the branch. This was done using
+         branch list hashmap as well as commitnum, which was
+- checkout (file name, commit id, and branchname): These three cases were considered.
+- rm(): removes the file both in staging area which will be kept as untracked hash and when it is in committed area, it will be tracked as deleted hashmap.
+- merge():
+
+Persistence
+-----------
+Dealing with serialization and deserialization through locating the file where the variables are located and saved at as well as
+reading through Utils.readObject; after making any changes, I saved it to where it was located using serialization given in the
+Utils.
+
+java -ea Gitlet.Main [configuration file] [input] [output]

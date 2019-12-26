@@ -1,0 +1,9 @@
+#basic commit err
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit ""
+Please enter a commit message.
+<<<

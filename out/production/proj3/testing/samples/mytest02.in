@@ -1,0 +1,5 @@
+#test rm
+I setup2.inc
+> add djaio.txt
+File does not exist.
+<<<

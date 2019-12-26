@@ -1,0 +1,15 @@
+> init
+<<<
++ f.txt f.txt
+> add f.txt
+<<<
+> commit "add this"
+<<<
++ g.txt g.txt
+> add g.txt
+<<<
+> commit "hhhh"
+<<<
+> find "hehe"
+Found no commit with that message.
+<<<

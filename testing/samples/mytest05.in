@@ -1,0 +1,17 @@
+> init
+<<<
++ f.txt wug.txt
+> add f.txt
+<<<
+> commit hi
+<<<
+> branch other
+<<<
++ g.txt notwug.txt
+> add g.txt
+<<<
+> commit hello
+<<<
+> branch other
+A branch with that name already exists.
+<<<

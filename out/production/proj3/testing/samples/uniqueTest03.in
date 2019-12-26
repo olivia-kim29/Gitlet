@@ -1,0 +1,34 @@
+> init
+<<<
++ wug.txt wug.txt
++ f.txt f.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
+> add f.txt
+<<<
+> commit "added f"
+<<<
+> rm f.txt
+<<<
+* f.txt
++ f.txt wug.txt
++ g.txt g.txt
+> add g.txt
+<<<
+> status
+=== Branches ===
+\*master
+
+=== Staged Files ===
+g.txt
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<*
